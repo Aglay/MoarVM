@@ -13583,6 +13583,111 @@ static const MVMOpInfo MVM_op_infos[] = {
         { MVM_operand_write_reg | MVM_operand_obj, MVM_operand_int16, MVM_operand_spesh_slot, MVM_operand_read_reg | MVM_operand_obj, MVM_operand_read_reg | MVM_operand_obj, MVM_operand_int16, MVM_operand_int16 }
     },
     {
+        MVM_OP_sp_get_bi,
+        "sp_get_bi",
+        ".s",
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_rbi, MVM_operand_read_reg | MVM_operand_obj, MVM_operand_int16 }
+    },
+    {
+        MVM_OP_sp_box_bi,
+        "sp_box_bi",
+        ".s",
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_obi, MVM_operand_read_reg | MVM_operand_int64 }
+    },
+    {
+        MVM_OP_sp_add_bi,
+        "sp_add_bi",
+        ".s",
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_obi, MVM_operand_read_reg | MVM_operand_rbi, MVM_operand_read_reg | MVM_operand_rbi }
+    },
+    {
+        MVM_OP_sp_sub_bi,
+        "sp_sub_bi",
+        ".s",
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_obi, MVM_operand_read_reg | MVM_operand_rbi, MVM_operand_read_reg | MVM_operand_rbi }
+    },
+    {
+        MVM_OP_sp_mul_bi,
+        "sp_mul_bi",
+        ".s",
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_obi, MVM_operand_read_reg | MVM_operand_rbi, MVM_operand_read_reg | MVM_operand_rbi }
+    },
+    {
+        MVM_OP_sp_unbox_bi,
+        "sp_unbox_bi",
+        ".s",
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_int64, MVM_operand_read_reg | MVM_operand_rbi }
+    },
+    {
+        MVM_OP_sp_takewrite_bi,
+        "sp_takewrite_bi",
+        ".s",
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_read_reg | MVM_operand_obj, MVM_operand_int16, MVM_operand_read_reg | MVM_operand_obi }
+    },
+    {
         MVM_OP_sp_bool_I,
         "sp_bool_I",
         ".s",
@@ -13746,7 +13851,7 @@ static const MVMOpInfo MVM_op_infos[] = {
     },
 };
 
-static const unsigned short MVM_op_counts = 917;
+static const unsigned short MVM_op_counts = 924;
 
 MVM_PUBLIC const MVMOpInfo * MVM_op_get_op(unsigned short op) {
     if (op >= MVM_op_counts)
